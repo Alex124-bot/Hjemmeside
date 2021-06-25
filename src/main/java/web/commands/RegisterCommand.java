@@ -31,12 +31,12 @@ public class RegisterCommand extends CommandUnprotectedPage
 
         if (password1.equals(password2))
         {
-            User user = userFacade.createUser(email, password1, address, phone, role);
+            User user = userFacade.createUser(email, password1, address, phone);
             HttpSession session = request.getSession();
 
             session.setAttribute("email", email);
             session.setAttribute("user", user);
-            session.setAttribute("role", user.getRole());
+//            session.setAttribute("role", user.getRole());
             return user.getRole() + "page";
         }
         else
