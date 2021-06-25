@@ -8,6 +8,14 @@ public class User {
     private int phone;
     private String role;
 
+    public User(String email, String password, String address, int phone, String role) {
+        this.email = email;
+        this.password = password;
+        this.address = address;
+        this.phone = phone;
+        this.role = role;
+    }
+
     public User(String email, String password, String address, int phone) {
         this.email = email;
         this.password = password;

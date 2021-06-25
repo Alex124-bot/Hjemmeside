@@ -5,6 +5,8 @@ import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
+import java.sql.SQLException;
+
 public class UserFacade
 {
     UserMapper userMapper;
