@@ -17,8 +17,8 @@
         <div>
             <h2>Our Cool Site</h2>
 
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
+            <div style="margin-top: 3em;margin-bottom: 3em; display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                <img src="<c:url value="/images/stormtrooper.jpg"/>" alt="stormtrooper">
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">
