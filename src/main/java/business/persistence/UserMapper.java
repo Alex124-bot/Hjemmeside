@@ -74,4 +74,42 @@ public class UserMapper {
         }
     }
 
+//    public User getUserInfo(int id) throws UserException
+//    {
+//        try (Connection connection = database.connect())
+//        {
+//            String sql = "SELECT name, street, town, zipCode, phone, role, email FROM `users` WHERE id=?";
+//
+//            try (PreparedStatement ps = connection.prepareStatement(sql))
+//            {
+//                ps.setInt(1, id);
+//                ResultSet rs = ps.executeQuery();
+//                if (rs.next())
+//                {
+//                    String email = rs.getString("email");
+//                    String role = rs.getString("role");
+//                    int phone = rs.getInt("phone");
+//                    String name = rs.getString("name");
+//                    String street = rs.getString("street");
+//                    String town = rs.getString("town");
+//                    int zipCode = rs.getInt("zipCode");
+//                    User user = new User(name, street, town, zipCode, email, phone, role);
+//                    user.setId(id);
+//                    return user;
+//                } else
+//                {
+//                    throw new UserException("Could not validate user");
+//                }
+//            }
+//            catch (SQLException ex)
+//            {
+//                throw new UserException(ex.getMessage());
+//            }
+//        }
+//        catch (SQLException ex)
+//        {
+//            throw new UserException("Connection to database could not be established");
+//        }
+//    }
+
 }

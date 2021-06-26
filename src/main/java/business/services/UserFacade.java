@@ -5,8 +5,6 @@ import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
-import java.sql.SQLException;
-
 public class UserFacade
 {
     UserMapper userMapper;
@@ -27,5 +25,9 @@ public class UserFacade
         userMapper.createUser(user);
         return user;
     }
+
+//    public User getUserInfo(int id) throws UserException {
+//        return userMapper.getUserInfo(id);
+//    }
 
 }

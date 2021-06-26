@@ -32,6 +32,17 @@ public class User {
         this.phone = phone;
     }
 
+    public User(int id, String name, String street, String town, int zipCode, String email, int phone, String role) {
+        this.id = id;
+        this.name = name;
+        this.street = street;
+        this.town = town;
+        this.zipCode = zipCode;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+    }
+
     public int getId() {
         return id;
     }
