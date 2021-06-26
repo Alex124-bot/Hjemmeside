@@ -14,13 +14,16 @@ public class UserMapper {
 
     public void createUser(User user) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "INSERT INTO users (email, password, address, phone) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO users (name, street, town, zipCode, email, password, phone) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps.setString(1, user.getEmail());
-                ps.setString(2, user.getPassword());
-                ps.setString(3, user.getAddress());
-                ps.setInt(4, user.getPhone());
+                ps.setString(1, user.getName());
+                ps.setString(2, user.getStreet());
+                ps.setString(3, user.getTown());
+                ps.setInt(4, user.getZipCode());
+                ps.setString(5, user.getEmail());
+                ps.setString(6, user.getPassword());
+                ps.setInt(7, user.getPhone());
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
@@ -36,7 +39,7 @@ public class UserMapper {
     {
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT id, address, phone, role FROM users WHERE email=? AND password=?";
+            String sql = "SELECT id, name, street, town, zipCode, phone, role FROM `users` WHERE email=? AND password=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
@@ -46,10 +49,13 @@ public class UserMapper {
                 if (rs.next())
                 {
                     int id = rs.getInt("id");
-                    String address = rs.getString("address");
-                    int phone = rs.getInt("phone");
                     String role = rs.getString("role");
-                    User user = new User(email, password, address, phone, role);
+                    int phone = rs.getInt("phone");
+                    String name = rs.getString("name");
+                    String street = rs.getString("street");
+                    String town = rs.getString("town");
+                    int zipCode = rs.getInt("zipCode");
+                    User user = new User(name, street, town, zipCode, email, password, phone, role);
                     user.setId(id);
                     return user;
                 } else

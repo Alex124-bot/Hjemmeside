@@ -2,24 +2,33 @@ package business.entities;
 
 public class User {
     private int id; // just used to demo retrieval of autogen keys in UserMapper
+    private String name;
+    private String street;
+    private String town;
+    private int zipCode;
     private String email;
     private String password; // Should be hashed and secured
-    private String address;
     private int phone;
     private String role;
 
-    public User(String email, String password, String address, int phone, String role) {
+    public User(String name, String street, String town, int zipCode, String email, String password, int phone, String role) {
+        this.name = name;
+        this.street = street;
+        this.town = town;
+        this.zipCode = zipCode;
         this.email = email;
         this.password = password;
-        this.address = address;
         this.phone = phone;
         this.role = role;
     }
 
-    public User(String email, String password, String address, int phone) {
+    public User(String name, String street, String town, int zipCode, String email, String password, int phone) {
+        this.name = name;
+        this.street = street;
+        this.town = town;
+        this.zipCode = zipCode;
         this.email = email;
         this.password = password;
-        this.address = address;
         this.phone = phone;
     }
 
@@ -29,6 +38,38 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getEmail() {
@@ -47,14 +88,6 @@ public class User {
         this.password = password;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public int getPhone() {
         return phone;
     }
@@ -71,4 +104,3 @@ public class User {
         this.role = role;
     }
 }
-

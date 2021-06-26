@@ -22,15 +22,18 @@ public class RegisterCommand extends CommandUnprotectedPage
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
+        String name = request.getParameter("name");
+        String street = request.getParameter("street");
+        String town = request.getParameter("town");
+        int zipCode = Integer.parseInt(request.getParameter("zipCode"));
         String email = request.getParameter("email");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
-        String address = request.getParameter("address");
         int phone = Integer.parseInt(request.getParameter("phone"));
 
         if (password1.equals(password2))
         {
-            User user = userFacade.createUser(email, password1, address, phone);
+            User user = userFacade.createUser(name, street, town, zipCode, email, password1, phone);
             HttpSession session = request.getSession();
 
             session.setAttribute("user", user);
