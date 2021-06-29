@@ -24,16 +24,17 @@
     -->
 <header class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
     <div class="h5 my-0 me-md-auto fw-normal">
-        <p>Alex Inc.</p>
+        <img src="<c:url value="/images/Alexinc.png"/>" alt="logo">
+
         <p style="font-size: larger">
             <jsp:invoke fragment="header"/>
         </p>
     </div>
     <nav class="my-2 my-md-0 me-md-3">
         <c:if test="${addHomeLink == null }">
-            <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
+            <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Forside</a>
         </c:if>
-        <a class="p-2 text-dark" href="#">Orders</a>
+        <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/orderpage">Orders</a>
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/profilepage">Profile</a>
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/aboutpage">About</a>
     </nav>

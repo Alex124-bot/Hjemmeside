@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Alex
   Date: 26-06-2021
-  Time: 14:13
+  Time: 15:30
   To change this template use File | Settings | File Templates.
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
@@ -11,14 +11,14 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         About
+         Order
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
 
     <jsp:body>
-        <h1>Welkommen til siden, om</h1>
-
+        <h1>Welcome to the order page</h1>
     </jsp:body>
 
 </t:genericpage>
+
