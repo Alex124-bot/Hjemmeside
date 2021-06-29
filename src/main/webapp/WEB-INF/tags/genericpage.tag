@@ -22,9 +22,9 @@
         This header is inspired by this bootstrap
         example: https://getbootstrap.com/docs/5.0/examples/pricing/
     -->
-<header class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
+<header style="font-family: Arial" class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
     <div class="h5 my-0 me-md-auto fw-normal">
-        <img src="<c:url value="/images/Alexinc.png"/>" alt="logo">
+<%--        <img src="<c:url value="/images/Alexinc.png"/>" alt="logo">--%>
 
         <p style="font-size: larger">
             <jsp:invoke fragment="header"/>
@@ -34,8 +34,10 @@
         <c:if test="${addHomeLink == null }">
             <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Forside</a>
         </c:if>
+        <c:if test="${sessionScope.user != null}">
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/orderpage">Orders</a>
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/profilepage">Profile</a>
+        </c:if>
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/aboutpage">About</a>
     </nav>
 
@@ -64,7 +66,7 @@
     </c:if>
 </header>
 
-<div id="body" class="container" style="min-height: 20vh;">
+<div id="body" class="container" style="min-height: 20vh; font-family: Arial">
     <jsp:doBody/>
 </div>
 
