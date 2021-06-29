@@ -45,46 +45,44 @@
 
             <div class="row">
                 <div class="column">
-                    <img style="width: 100%" src="<c:url value="/images/Forsidebilled.jpg"/>" alt="logo">
-
-
-                </div>
-
-                <div class="column">
-
-                    <img style="width: 100%;" src="<c:url value="/images/electron.png"/>" alt="logo">
-
-                    <p><b>Tryk videre rundt på siderne og se om jeg kan hjælpe dig med din komputer:</b> <p style="color: blue"><b>Diagnostisering <p style="color: green"></b><b>100,-</b></p></p></b></p> </b></p>
+                    <img style="width: 100%" src="<c:url value="/images/KomputerKomputer.png"/>" alt="logo">
+                    <p><b>Tryk videre rundt på siderne og se om jeg kan hjælpe dig med din komputer:</b>
+                    <p style="color: blue"><b>Diagnostisering
+                    <p style="color: green"></b><b>100,-</b></p></p></b></p> </b></p>
 
                 </div>
 
                 <div class="column">
 
-                    <img src="<c:url value="/images/Komputer.jpg"/>" alt="Komputer">
+                    <img src="<c:url value="/images/Komputer.jpg"/>" alt="logo">
+
+                </div>
+
+                <div class="column">
+
+                    <img style="width: 100%;" src="<c:url value="/images/Forsidebilled.jpg"/>" alt="Komputer">
 
                 </div>
             </div>
 
-<%--            <div style="margin-top: 3em;margin-bottom: 3em; display: block; margin-left: auto; margin-right: auto; width: 33%;">--%>
-<%--                <img src="<c:url value="/images/Alexinc.png"/>" alt="logo">--%>
-<%--            </div>--%>
+                <%--            <div style="margin-top: 3em;margin-bottom: 3em; display: block; margin-left: auto; margin-right: auto; width: 33%;">--%>
+                <%--                <img src="<c:url value="/images/Alexinc.png"/>" alt="logo">--%>
+                <%--            </div>--%>
 
-<%--                <img style="width: 800px;" src="<c:url value="/images/Forsidebilled.jpg"/>" alt="logo">--%>
-
-
+                <%--                <img style="width: 800px;" src="<c:url value="/images/Forsidebilled.jpg"/>" alt="logo">--%>
 
 
             <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
+            <p style="font-size: larger">This is what you can do,
+                since your are logged in as an employee</p>
+            <p><a href="fc/employeepage">Employee Page</a>
+                </c:if>
 
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
+                <c:if test="${sessionScope.role == 'customer' }">
+            <p style="font-size: larger">This is what you can do, since your
+                are logged in as a customer</p>
+            <p><a href="fc/customerpage">Customer Page</a>
+                </c:if>
 
         </div>
         </div>
